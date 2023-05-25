@@ -26,6 +26,7 @@ public class ConcatenarTextosInputStdIn {
             cadenas.add(s.nextLine());
         }
 
+
         //concatenamos textos separados por el delimitador
         resultado= "";
         for (String cadena: cadenas ) {
