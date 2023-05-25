@@ -4,8 +4,8 @@ import java.security.spec.RSAOtherPrimeInfo;
 
 public class SmartPhone extends SmartDevice{
 
-    private static double INI_LEV_SIGNAL = 50.0;
-    private static double MIN_SIGNAL = 30.0;
+    private static final double INI_LEV_SIGNAL = 50.0;
+    private static final double MIN_SIGNAL = 30.0;
     private String provider;
     private String telephoneNum;
     private double levelSignal;
