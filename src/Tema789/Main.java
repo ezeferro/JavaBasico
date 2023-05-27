@@ -1,8 +1,7 @@
 package Tema789;
 
 
-import java.io.InputStream;
-import java.io.PrintStream;
+import java.io.*;
 import java.sql.Array;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -44,7 +43,7 @@ public class Main {
                         break;
                     case 8:
                         ejercicioCopiaFichero();
-                        ;
+                        break;
                     case 9:
                         ;
                     default: exit = true
@@ -68,12 +67,19 @@ public class Main {
 
     public static void ejercicioCopiaFichero() {
 
+        try {
+            InputStream in = new FileInputStream("C:/files/file1.txt");
+            byte[] input = in.readAllBytes();
+
+            PrintStream out = new PrintStream("C:/files/file2.txt");
+            out.write(input);
 
 
-    }
-
-    public static void copiarFichero(InputStream in, PrintStream out){
-
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
 
     }
