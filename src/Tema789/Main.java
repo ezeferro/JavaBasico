@@ -45,16 +45,23 @@ public class Main {
                         ejercicioCopiaFichero();
                         break;
                     case 9:
-                        ;
-                    default: exit = true
-                        ;
+                        MiPrograma.start();
+                        break;
+                    case 10:
+                        exit = true;
+                    default:
+                        exit = true;
 
                 }
 
-                System.out.println("Ejecucion de ejercicio finalizada \n");
+                System.out.println("\nEjecucion de ejercicio finalizada");
+
+                if(!exit){
+                    System.out.println("Volviendo a menu principal...\n");
+                }
 
                 try {
-                    TimeUnit.SECONDS.sleep(2 );
+                    TimeUnit.SECONDS.sleep(4 );
                 } catch (Exception e){
                     System.out.println( "Error during sleep " + e.getMessage() );
                 }
@@ -219,17 +226,18 @@ public class Main {
     public static void imprimirPrompt(){
 
         System.out.println( "Ingrese el numero segun el ejercicio que desea ejecutar:");
-        System.out.println( "0 - Revertir texto");
-        System.out.println( "1 - Recorrer array de Strings");
-        System.out.println( "2 - Recorrer array bidimensional de enteros");
-        System.out.println( "3 - Crear , modificar y recorrer vector");
-        System.out.println( "4 - Respuesta a pregunta: cuál es el problema de utilizar un Vector con " +
+        System.out.println( "0  - Revertir texto");
+        System.out.println( "1  - Recorrer array de Strings");
+        System.out.println( "2  - Recorrer array bidimensional de enteros");
+        System.out.println( "3  - Crear , modificar y recorrer vector");
+        System.out.println( "4  - Respuesta a pregunta: cuál es el problema de utilizar un Vector con " +
                             " la capacidad por defecto si tuviésemos 1000 elementos para ser añadidos al mismo");
-        System.out.println( "5 - Crear ArrayList de Strings");
-        System.out.println( "6 - Crear ArrayList de int");
-        System.out.println( "7 - Funcion divide por cero");
-        System.out.println( "8 - InputStream y PrintStream");
-        System.out.println( "9 - Sorpresa!");
+        System.out.println( "5  - Crear ArrayList de Strings");
+        System.out.println( "6  - Crear ArrayList de int");
+        System.out.println( "7  - Funcion divide por cero");
+        System.out.println( "8  - InputStream y PrintStream");
+        System.out.println( "9  - Sorpresa!");
+        System.out.println( "10 - Salir");
 
 
     }

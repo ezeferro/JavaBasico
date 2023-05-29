@@ -9,18 +9,18 @@ public class MiPrograma {
     public static InputStream in;
     public static PrintStream out;
 
-    public void start(){
+    public static void start(){
 
             imprimePrompt();
 
-            switch (seleccioneMetodoDeEntrada()){
+            switch (getMetodoDeEntrada()){
                 case 1:
-                    ProcesoInputConsola inputConsola = new ProcesoInputConsola();
-                    inputConsola.start();
+                    ProcesoInputConsola procesoInputConsola = new ProcesoInputConsola();
+                    procesoInputConsola.start();
                     break;
                 case 2:
-                    ProcesoInputArchivo inputArchivo = new ProcesoInputArchivo();
-                    inputArchivo.start();
+                    ProcesoInputArchivo procesoInputArchivo = new ProcesoInputArchivo();
+                    procesoInputArchivo.start();
                     break;
                 default:
                     break;
@@ -29,23 +29,22 @@ public class MiPrograma {
 
     }
 
-    private int seleccioneMetodoDeEntrada() {
+    private static int getMetodoDeEntrada() {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println( "Seleccione un metodo de entrada.\n");
-        System.out.println( "1 - Entrada palabra por palabra.\n");
-        System.out.println( "2 - Entrada palabra por fichero.\n");
+        System.out.println( "Seleccione un metodo de entrada.");
+        System.out.println( "1 - Entrada palabra por palabra.");
+        System.out.println( "2 - Entrada palabra por fichero.");
 
         return sc.nextInt();
 
     }
 
-    public void imprimePrompt(){
+    public static void imprimePrompt(){
 
-        System.out.println( "Este programa toma una lista de palabrasque pueden ser \n" +
-                            "ingresadas linea a linea por consola o desde un fichero de texto, \n" +
-                            "con una palabra por linea.\n");
+        System.out.println( "Este programa recibe un listado de palabras(por consola o en un fichero .txt),\n" +
+                            "Un 'path' de un archivo de texto, busca las palabras en el archivo y las elimina.\n");
 
     }
 
